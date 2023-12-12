@@ -5,17 +5,17 @@
         <title>
             Caluladora Basal
         </title>
-        <script src="scrip.js" defer></script>
+        <script src="scripts.js" defer></script>
     </head>
     <body>
         <div id="bloquePadre" >
             <div id="bloque1" >
                 <div class="contenido" >
                     <h1 class="titleCon"> 
-                        Calcualdora de Hidratacion Basal
+                        Calculadora de Hidratacion Basal
                     </h1>
                     <p class="item">Completa todos los datos</p>
-                    <input type="number" placeholder="Ingrese el peso en Kg"/>
+                    <input type="number" id="peso" placeholder="Ingrese el peso en Kg"/>
                     <p class="item" id="error">* Debe completar todos los datos</p>
                     <br></br>
                     <button class="item" id="Calcular">
@@ -30,11 +30,13 @@
                  <h1 class="titleDet" >
                      ¿Como se calcula? 
                  </h1>
-                 <ul>
-                     <li>De 0kg a 10kg, se calcula 100cc por cada kilo.</li>
-                     <li>Se suman 50cc por cada kilo de peso por arriba de 10kg, hasta 20kg</li>
-                     <li>De 20kg para arriba, se suman 20cc por cada kilo adicional</li>
-                 </ul>
+                    <ul>
+                        <li>De 0kg a 10kg, se calcula 100cc por cada kilo.</li>
+                        <li>Se suman 50cc por cada kilo de peso por arriba de 10kg, hasta 20kg</li>
+                        <li>De 20kg para arriba, se suman 20cc por cada kilo adicional</li>
+                        <li>Para mayores de 30kg se calcula por SC:
+                            En esta Calculadora se multiplica la superficie corporal por 1500 </li>
+                    </ul>
                 </div>
             </div>    
         </div>
