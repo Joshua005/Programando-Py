@@ -2,8 +2,9 @@ const CALCULAR = document.getElementById('Calcular');
 const ERROR = document.getElementById('error');
 const FLU = document.getElementById('flu');
 const MAN = document.getElementById('man');
-function calculoBasal(){
-    let PESO = document.getElementById('peso').valueAsNumber;
+// Funcion que contiene el algoritmo de calculo basal
+function calculoBasal(PESO){
+    // Algoritmo del metodo Holliday Segar
     if ( PESO < 30){
         if (PESO <= 10){
            let calculoBasal = PESO*100;
@@ -31,17 +32,19 @@ function calculoBasal(){
         return Math.round(superficieCorporal);
     } 
 }
+// se encarga del funcionamiento del boton de la pagina
 CALCULAR.addEventListener('click', ()=> {
     const DATO = document.getElementById('peso').valueAsNumber;
     if (DATO > 0){
         ERROR.style.display = 'none'
-        let flujo = calculoBasal();
+        let flujo = calculoBasal(DATO);
         let mantenimiento = flujo*1.5;
         FLU.innerHTML = 'Necesita ' + flujo + 'cc/hr';
         MAN.innerHTML = 'm+m/2 y el mantenimineto es ' + mantenimiento + 'cc/hr';
         FLU.style.display = 'block';
         MAN.style.display = 'block';
-    } else if(DATO==0) {
+    } 
+    else if(DATO==0) {
         ERROR.style.display = 'block';
         let flujo = calculoBasal();
         let mantenimiento = flujo*1.5;
